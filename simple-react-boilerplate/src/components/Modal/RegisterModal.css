@@ -1,0 +1,74 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(22, 33, 62, 0.72);
+  backdrop-filter: blur(8px);
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.2s ease;
+}
+
+.modal-content {
+  background: var(--bg-light);
+  padding: 40px;
+  width: 100%;
+  max-width: 480px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  animation: modalScaleUp 0.3s ease;
+}
+
+@keyframes modalScaleUp {
+  from { opacity: 0; transform: scale(0.95) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.modal-content h2 {
+  font-size: 28px;
+  margin-bottom: 24px;
+  color: var(--bg-primary);
+  text-align: center;
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 16px;
+  display: inline-block;
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text-dark);
+}
+
+input[type="file"].form-control {
+  padding: 10px 14px;
+  background: var(--bg-cream);
+  border: 1px dashed var(--border-light);
+  cursor: pointer;
+}
+
+input[type="file"].form-control:hover {
+  border-color: var(--bg-primary);
+}
+
+.modal-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.modal-actions button {
+  flex: 1;
+}
