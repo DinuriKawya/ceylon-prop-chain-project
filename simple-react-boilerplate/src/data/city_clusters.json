@@ -1,0 +1,574 @@
+[
+  {
+    "city": "Angoda",
+    "postal_code": 10620,
+    "cluster": "Budget & Rising",
+    "avg_price_per_sqft": 16132.44,
+    "listing_count": 4,
+    "yoy_trend_pct": null,
+    "similar_cities": [
+      "Mount Lavinia",
+      "Athurugiriya",
+      "Kottawa"
+    ]
+  },
+  {
+    "city": "Athurugiriya",
+    "postal_code": 10150,
+    "cluster": "Budget & Rising",
+    "avg_price_per_sqft": 24682.47,
+    "listing_count": 232,
+    "yoy_trend_pct": -2.8,
+    "similar_cities": [
+      "Mount Lavinia",
+      "Kottawa",
+      "Talawatugoda"
+    ]
+  },
+  {
+    "city": "Battaramulla",
+    "postal_code": 10120,
+    "cluster": "Fast Growing",
+    "avg_price_per_sqft": 32554.61,
+    "listing_count": 63,
+    "yoy_trend_pct": -4.8,
+    "similar_cities": [
+      "Colombo 6",
+      "Dehiwala",
+      "Colombo 4"
+    ]
+  },
+  {
+    "city": "Boralesgamuwa",
+    "postal_code": 10290,
+    "cluster": "Fast Growing",
+    "avg_price_per_sqft": 28013.13,
+    "listing_count": 9,
+    "yoy_trend_pct": -8.4,
+    "similar_cities": [
+      "Colombo 6",
+      "Dehiwala",
+      "Colombo 4"
+    ]
+  },
+  {
+    "city": "Colombo 10",
+    "postal_code": 1000,
+    "cluster": "Fast Growing",
+    "avg_price_per_sqft": 33377.67,
+    "listing_count": 49,
+    "yoy_trend_pct": 7.0,
+    "similar_cities": [
+      "Colombo 6",
+      "Dehiwala",
+      "Colombo 4"
+    ]
+  },
+  {
+    "city": "Colombo 12",
+    "postal_code": 1200,
+    "cluster": "Budget & Rising",
+    "avg_price_per_sqft": 21482.54,
+    "listing_count": 5,
+    "yoy_trend_pct": null,
+    "similar_cities": [
+      "Mount Lavinia",
+      "Athurugiriya",
+      "Kottawa"
+    ]
+  },
+  {
+    "city": "Colombo 13",
+    "postal_code": 1300,
+    "cluster": "Budget & Rising",
+    "avg_price_per_sqft": 23354.54,
+    "listing_count": 3,
+    "yoy_trend_pct": null,
+    "similar_cities": [
+      "Mount Lavinia",
+      "Athurugiriya",
+      "Kottawa"
+    ]
+  },
+  {
+    "city": "Colombo 14",
+    "postal_code": 1400,
+    "cluster": "Budget & Rising",
+    "avg_price_per_sqft": 13730.73,
+    "listing_count": 3,
+    "yoy_trend_pct": null,
+    "similar_cities": [
+      "Mount Lavinia",
+      "Athurugiriya",
+      "Kottawa"
+    ]
+  },
+  {
+    "city": "Colombo 15",
+    "postal_code": 1500,
+    "cluster": "Fast Growing",
+    "avg_price_per_sqft": 27607.99,
+    "listing_count": 27,
+    "yoy_trend_pct": 4.1,
+    "similar_cities": [
+      "Colombo 6",
+      "Dehiwala",
+      "Colombo 4"
+    ]
+  },
+  {
+    "city": "Colombo 2",
+    "postal_code": 200,
+    "cluster": "Expensive & Stable",
+    "avg_price_per_sqft": 62377.57,
+    "listing_count": 397,
+    "yoy_trend_pct": 5.7,
+    "similar_cities": [
+      "Colombo 5",
+      "Rajagiriya",
+      "Colombo 3"
+    ]
+  },
+  {
+    "city": "Colombo 3",
+    "postal_code": 300,
+    "cluster": "Expensive & Stable",
+    "avg_price_per_sqft": 51001.25,
+    "listing_count": 507,
+    "yoy_trend_pct": -1.7,
+    "similar_cities": [
+      "Colombo 5",
+      "Rajagiriya",
+      "Colombo 2"
+    ]
+  },
+  {
+    "city": "Colombo 4",
+    "postal_code": 400,
+    "cluster": "Fast Growing",
+    "avg_price_per_sqft": 36712.56,
+    "listing_count": 209,
+    "yoy_trend_pct": 10.9,
+    "similar_cities": [
+      "Colombo 6",
+      "Dehiwala",
+      "Colombo 8"
+    ]
+  },
+  {
+    "city": "Colombo 5",
+    "postal_code": 500,
+    "cluster": "Expensive & Stable",
+    "avg_price_per_sqft": 50494.04,
+    "listing_count": 559,
+    "yoy_trend_pct": 0.2,
+    "similar_cities": [
+      "Rajagiriya",
+      "Colombo 3",
+      "Colombo 2"
+    ]
+  },
+  {
+    "city": "Colombo 6",
+    "postal_code": 600,
+    "cluster": "Fast Growing",
+    "avg_price_per_sqft": 35194.47,
+    "listing_count": 460,
+    "yoy_trend_pct": 8.4,
+    "similar_cities": [
+      "Dehiwala",
+      "Colombo 4",
+      "Colombo 8"
+    ]
+  },
+  {
+    "city": "Colombo 7",
+    "postal_code": 700,
+    "cluster": "Expensive & Stable",
+    "avg_price_per_sqft": 60353.34,
+    "listing_count": 112,
+    "yoy_trend_pct": -13.3,
+    "similar_cities": [
+      "Colombo 5",
+      "Rajagiriya",
+      "Colombo 3"
+    ]
+  },
+  {
+    "city": "Colombo 8",
+    "postal_code": 800,
+    "cluster": "Fast Growing",
+    "avg_price_per_sqft": 39239.83,
+    "listing_count": 143,
+    "yoy_trend_pct": -0.0,
+    "similar_cities": [
+      "Colombo 6",
+      "Dehiwala",
+      "Colombo 4"
+    ]
+  },
+  {
+    "city": "Colombo 9",
+    "postal_code": 900,
+    "cluster": "Budget & Rising",
+    "avg_price_per_sqft": 25895.22,
+    "listing_count": 26,
+    "yoy_trend_pct": -9.6,
+    "similar_cities": [
+      "Mount Lavinia",
+      "Athurugiriya",
+      "Kottawa"
+    ]
+  },
+  {
+    "city": "Dehiwala",
+    "postal_code": 10350,
+    "cluster": "Fast Growing",
+    "avg_price_per_sqft": 29029.66,
+    "listing_count": 423,
+    "yoy_trend_pct": 4.8,
+    "similar_cities": [
+      "Colombo 6",
+      "Colombo 4",
+      "Colombo 8"
+    ]
+  },
+  {
+    "city": "Galle City",
+    "postal_code": 80000,
+    "cluster": "Budget & Rising",
+    "avg_price_per_sqft": 26174.47,
+    "listing_count": 15,
+    "yoy_trend_pct": 44.6,
+    "similar_cities": [
+      "Mount Lavinia",
+      "Athurugiriya",
+      "Kottawa"
+    ]
+  },
+  {
+    "city": "Gampaha City",
+    "postal_code": 11000,
+    "cluster": "Budget & Rising",
+    "avg_price_per_sqft": 20016.92,
+    "listing_count": 21,
+    "yoy_trend_pct": 18.5,
+    "similar_cities": [
+      "Mount Lavinia",
+      "Athurugiriya",
+      "Kottawa"
+    ]
+  },
+  {
+    "city": "Homagama",
+    "postal_code": 10200,
+    "cluster": "Budget & Rising",
+    "avg_price_per_sqft": 17231.39,
+    "listing_count": 59,
+    "yoy_trend_pct": -1.9,
+    "similar_cities": [
+      "Mount Lavinia",
+      "Athurugiriya",
+      "Kottawa"
+    ]
+  },
+  {
+    "city": "Kadawatha",
+    "postal_code": 11850,
+    "cluster": "Budget & Rising",
+    "avg_price_per_sqft": 22184.74,
+    "listing_count": 4,
+    "yoy_trend_pct": null,
+    "similar_cities": [
+      "Mount Lavinia",
+      "Athurugiriya",
+      "Kottawa"
+    ]
+  },
+  {
+    "city": "Kandana",
+    "postal_code": 11320,
+    "cluster": "Expensive & Stable",
+    "avg_price_per_sqft": 44146.84,
+    "listing_count": 3,
+    "yoy_trend_pct": null,
+    "similar_cities": [
+      "Colombo 5",
+      "Rajagiriya",
+      "Colombo 3"
+    ]
+  },
+  {
+    "city": "Kandy City",
+    "postal_code": 20000,
+    "cluster": "Fast Growing",
+    "avg_price_per_sqft": 28203.83,
+    "listing_count": 4,
+    "yoy_trend_pct": null,
+    "similar_cities": [
+      "Colombo 6",
+      "Dehiwala",
+      "Colombo 4"
+    ]
+  },
+  {
+    "city": "Kelaniya",
+    "postal_code": 11600,
+    "cluster": "Budget & Rising",
+    "avg_price_per_sqft": 23347.18,
+    "listing_count": 9,
+    "yoy_trend_pct": null,
+    "similar_cities": [
+      "Mount Lavinia",
+      "Athurugiriya",
+      "Kottawa"
+    ]
+  },
+  {
+    "city": "Kiribathgoda",
+    "postal_code": 11600,
+    "cluster": "Budget & Rising",
+    "avg_price_per_sqft": 20356.14,
+    "listing_count": 5,
+    "yoy_trend_pct": null,
+    "similar_cities": [
+      "Mount Lavinia",
+      "Athurugiriya",
+      "Kottawa"
+    ]
+  },
+  {
+    "city": "Kolonnawa",
+    "postal_code": 10600,
+    "cluster": "Budget & Rising",
+    "avg_price_per_sqft": 18241.21,
+    "listing_count": 3,
+    "yoy_trend_pct": null,
+    "similar_cities": [
+      "Mount Lavinia",
+      "Athurugiriya",
+      "Kottawa"
+    ]
+  },
+  {
+    "city": "Kottawa",
+    "postal_code": 10220,
+    "cluster": "Budget & Rising",
+    "avg_price_per_sqft": 22181.68,
+    "listing_count": 75,
+    "yoy_trend_pct": 3.6,
+    "similar_cities": [
+      "Mount Lavinia",
+      "Athurugiriya",
+      "Talawatugoda"
+    ]
+  },
+  {
+    "city": "Kotte",
+    "postal_code": 10100,
+    "cluster": "Fast Growing",
+    "avg_price_per_sqft": 35138.75,
+    "listing_count": 44,
+    "yoy_trend_pct": 22.6,
+    "similar_cities": [
+      "Colombo 6",
+      "Dehiwala",
+      "Colombo 4"
+    ]
+  },
+  {
+    "city": "Malabe",
+    "postal_code": 10115,
+    "cluster": "Fast Growing",
+    "avg_price_per_sqft": 27597.85,
+    "listing_count": 46,
+    "yoy_trend_pct": 12.4,
+    "similar_cities": [
+      "Colombo 6",
+      "Dehiwala",
+      "Colombo 4"
+    ]
+  },
+  {
+    "city": "Moratuwa",
+    "postal_code": 10400,
+    "cluster": "Budget & Rising",
+    "avg_price_per_sqft": 18720.9,
+    "listing_count": 43,
+    "yoy_trend_pct": 17.5,
+    "similar_cities": [
+      "Mount Lavinia",
+      "Athurugiriya",
+      "Kottawa"
+    ]
+  },
+  {
+    "city": "Mount Lavinia",
+    "postal_code": 10370,
+    "cluster": "Budget & Rising",
+    "avg_price_per_sqft": 25749.04,
+    "listing_count": 278,
+    "yoy_trend_pct": 1.4,
+    "similar_cities": [
+      "Athurugiriya",
+      "Kottawa",
+      "Talawatugoda"
+    ]
+  },
+  {
+    "city": "Nawala",
+    "postal_code": 10106,
+    "cluster": "Fast Growing",
+    "avg_price_per_sqft": 40037.42,
+    "listing_count": 27,
+    "yoy_trend_pct": -7.4,
+    "similar_cities": [
+      "Colombo 6",
+      "Dehiwala",
+      "Colombo 4"
+    ]
+  },
+  {
+    "city": "Negombo",
+    "postal_code": 11500,
+    "cluster": "Budget & Rising",
+    "avg_price_per_sqft": 24539.63,
+    "listing_count": 3,
+    "yoy_trend_pct": null,
+    "similar_cities": [
+      "Mount Lavinia",
+      "Athurugiriya",
+      "Kottawa"
+    ]
+  },
+  {
+    "city": "Nugegoda",
+    "postal_code": 10250,
+    "cluster": "Fast Growing",
+    "avg_price_per_sqft": 30378.71,
+    "listing_count": 108,
+    "yoy_trend_pct": 3.6,
+    "similar_cities": [
+      "Colombo 6",
+      "Dehiwala",
+      "Colombo 4"
+    ]
+  },
+  {
+    "city": "Nuwara Eliya City",
+    "postal_code": 22200,
+    "cluster": "Fast Growing",
+    "avg_price_per_sqft": 36329.67,
+    "listing_count": 8,
+    "yoy_trend_pct": 45.3,
+    "similar_cities": [
+      "Colombo 6",
+      "Dehiwala",
+      "Colombo 4"
+    ]
+  },
+  {
+    "city": "Pannipitiya",
+    "postal_code": 10230,
+    "cluster": "Fast Growing",
+    "avg_price_per_sqft": 32857.14,
+    "listing_count": 5,
+    "yoy_trend_pct": null,
+    "similar_cities": [
+      "Colombo 6",
+      "Dehiwala",
+      "Colombo 4"
+    ]
+  },
+  {
+    "city": "Piliyandala",
+    "postal_code": 10300,
+    "cluster": "Budget & Rising",
+    "avg_price_per_sqft": 23315.51,
+    "listing_count": 10,
+    "yoy_trend_pct": null,
+    "similar_cities": [
+      "Mount Lavinia",
+      "Athurugiriya",
+      "Kottawa"
+    ]
+  },
+  {
+    "city": "Ragama",
+    "postal_code": 11010,
+    "cluster": "Fast Growing",
+    "avg_price_per_sqft": 29535.86,
+    "listing_count": 3,
+    "yoy_trend_pct": null,
+    "similar_cities": [
+      "Colombo 6",
+      "Dehiwala",
+      "Colombo 4"
+    ]
+  },
+  {
+    "city": "Rajagiriya",
+    "postal_code": 10107,
+    "cluster": "Expensive & Stable",
+    "avg_price_per_sqft": 44819.55,
+    "listing_count": 544,
+    "yoy_trend_pct": -3.2,
+    "similar_cities": [
+      "Colombo 5",
+      "Colombo 3",
+      "Colombo 2"
+    ]
+  },
+  {
+    "city": "Ratmalana",
+    "postal_code": 10390,
+    "cluster": "Budget & Rising",
+    "avg_price_per_sqft": 21681.94,
+    "listing_count": 8,
+    "yoy_trend_pct": null,
+    "similar_cities": [
+      "Mount Lavinia",
+      "Athurugiriya",
+      "Kottawa"
+    ]
+  },
+  {
+    "city": "Talawatugoda",
+    "postal_code": 10116,
+    "cluster": "Budget & Rising",
+    "avg_price_per_sqft": 26715.47,
+    "listing_count": 60,
+    "yoy_trend_pct": -12.0,
+    "similar_cities": [
+      "Mount Lavinia",
+      "Athurugiriya",
+      "Kottawa"
+    ]
+  },
+  {
+    "city": "Veyangoda",
+    "postal_code": 11100,
+    "cluster": "Budget & Rising",
+    "avg_price_per_sqft": 7598.34,
+    "listing_count": 7,
+    "yoy_trend_pct": null,
+    "similar_cities": [
+      "Mount Lavinia",
+      "Athurugiriya",
+      "Kottawa"
+    ]
+  },
+  {
+    "city": "Wattala",
+    "postal_code": 11104,
+    "cluster": "Fast Growing",
+    "avg_price_per_sqft": 30048.9,
+    "listing_count": 33,
+    "yoy_trend_pct": 4.0,
+    "similar_cities": [
+      "Colombo 6",
+      "Dehiwala",
+      "Colombo 4"
+    ]
+  }
+]
