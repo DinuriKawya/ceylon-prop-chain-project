@@ -1,0 +1,110 @@
+.verify-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: linear-gradient(160deg, #16213e 0%, #0d1526 100%);
+  font-family: 'Inter', sans-serif;
+}
+
+.verify-card {
+  width: 100%;
+  max-width: 460px;
+  background: #fff;
+  border-radius: 20px;
+  padding: 34px 30px;
+  text-align: center;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.45);
+}
+
+.verify-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 800;
+  color: #16213e;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+}
+.verify-brand svg { color: #ff7a59; }
+
+.verify-heading {
+  font-size: 20px;
+  font-weight: 700;
+  color: #16213e;
+  margin: 6px 0 22px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.verify-loading {
+  color: #5b6b9e;
+  font-size: 15px;
+  padding: 30px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.verify-result { padding: 8px 0; }
+.verify-icon { font-size: 56px; margin-bottom: 12px; }
+.verify-result.ok .verify-icon { color: #16a34a; }
+.verify-result.fail .verify-icon { color: #e0524f; }
+
+.verify-status-text {
+  font-size: 22px;
+  font-weight: 800;
+  color: #16213e;
+  margin-bottom: 6px;
+}
+.verify-result.ok .verify-status-text { color: #16a34a; }
+.verify-result.fail .verify-status-text { color: #e0524f; }
+
+.verify-prop {
+  font-size: 14px;
+  color: #5b6b9e;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+.verify-result > p { font-size: 14px; color: #8a94ad; margin-bottom: 18px; }
+
+.verify-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  text-align: left;
+  background: #f6f8fc;
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 18px;
+}
+.verify-grid span {
+  display: block;
+  font-size: 10px;
+  color: #8a94ad;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+.verify-grid strong { font-size: 15px; color: #16213e; word-break: break-word; }
+
+.verify-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(22, 163, 74, 0.1);
+  color: #16a34a;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 999px;
+}
+
+.verify-home {
+  display: block;
+  margin-top: 24px;
+  font-size: 13px;
+  color: #5b6b9e;
+  text-decoration: none;
+}
+.verify-home:hover { color: #ff7a59; }

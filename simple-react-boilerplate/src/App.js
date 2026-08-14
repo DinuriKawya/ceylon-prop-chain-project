@@ -14,6 +14,7 @@ import AdminDashboard from './pages/Admin/AdminDashboard';
 import PropertyDetails from './pages/PropertyDetails/PropertyDetails';
 import Transactions from './pages/Transactions/Transactions';
 import Support from './pages/Support/Support';
+import VerifyCertificate from './pages/Verify/VerifyCertificate';
 import './index.css';
 
 const AppContent = () => {
@@ -26,8 +27,7 @@ const AppContent = () => {
     setActiveTab('property-details');
   };
 
-  // Close the floating chat panel whenever the user navigates to a different
-  // page - chat history itself stays intact in ChatContext either way.
+
   useEffect(() => {
     setChatOpen(false);
   }, [activeTab, setChatOpen]);
@@ -55,6 +55,11 @@ const AppContent = () => {
 };
 
 function App() {
+  const isVerify = new URLSearchParams(window.location.search).get('verify') === '1';
+  if (isVerify) {
+    return <VerifyCertificate />;
+  }
+
   return (
     <WalletProvider>
       <UserProvider>

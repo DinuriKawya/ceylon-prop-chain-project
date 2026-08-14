@@ -3,11 +3,12 @@ import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from 'recharts';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faWallet, faChartPie, faMapMarkerAlt, faCoins, faGem, faHandHoldingUsd, faExchangeAlt, faMoneyBillWave, faBuilding,
-  faChevronRight, faPercent, faArrowUp, faArrowDown, faHistory, faCheckCircle
+  faChevronRight, faPercent, faArrowUp, faArrowDown, faHistory, faCheckCircle, faAward
 } from '@fortawesome/free-solid-svg-icons';
 import usePortfolioLogic from './usePortfolioLogic';
 import useTransactionsLogic from '../Transactions/useTransactionsLogic';
 import { useWallet } from '../../hooks/useWallet';
+import OwnershipCertificate from '../../components/Certificate/OwnershipCertificate';
 import './Portfolio.css';
 
 const COLORS = ['#16213e', '#ff7a59', '#2dd4bf', '#f2a65a', '#5b6b9e', '#5eead4'];
@@ -92,6 +93,7 @@ const Portfolio = ({ setActiveTab }) => {
   const hasListed = listedList.length > 0;
   const [view, setView] = useState(hasHoldings ? 'holdings' : 'listed');
   const [selectedId, setSelectedId] = useState(null);
+  const [certItem, setCertItem] = useState(null);
 
   if (!hasHoldings && !hasListed) {
     return (
@@ -235,10 +237,13 @@ const Portfolio = ({ setActiveTab }) => {
                 <div className="icon-chip rounded-3 d-flex align-items-center justify-content-center flex-shrink-0" style={{ width: 48, height: 48, background: 'rgba(255, 122, 89, 0.12)', color: 'var(--primary)', fontSize: 20 }}>
                   <FontAwesomeIcon icon={faCoins} />
                 </div>
-                <div>
+                <div className="flex-grow-1">
                   <h3 className="mb-0">{selected.apt.title}</h3>
                   <p className="text-muted mb-0" style={{ fontSize: '13px' }}><FontAwesomeIcon icon={faMapMarkerAlt} className="me-1" />{selected.apt.location}</p>
                 </div>
+                <button className="cert-open-btn" onClick={() => setCertItem(selected)}>
+                  <FontAwesomeIcon icon={faAward} className="me-2" />Certificate
+                </button>
               </div>
 
               <div className="row row-cols-2 row-cols-md-4 g-2 mb-4">
@@ -351,6 +356,10 @@ const Portfolio = ({ setActiveTab }) => {
           </div>
         )}
       </div>
+
+      {certItem && (
+        <OwnershipCertificate item={certItem} account={account} onClose={() => setCertItem(null)} />
+      )}
     </div>
   );
 };
