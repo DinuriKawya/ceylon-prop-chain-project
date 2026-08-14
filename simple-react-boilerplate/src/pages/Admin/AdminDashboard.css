@@ -1,0 +1,370 @@
+.admin-page-bg {
+  background: var(--bg-cream);
+  min-height: 100vh;
+  position: relative;
+}
+
+.admin-page-bg-decor {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.admin-page-bg-decor::before,
+.admin-page-bg-decor::after {
+  content: '';
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  filter: blur(120px);
+}
+
+.admin-page-bg-decor::before {
+  background: var(--bg-primary);
+  opacity: 0.12;
+  top: -180px;
+  left: -160px;
+}
+
+.admin-page-bg-decor::after {
+  background: var(--primary);
+  opacity: 0.14;
+  bottom: -220px;
+  right: -180px;
+}
+
+.admin-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  position: sticky;
+  top: 110px;
+}
+
+.admin-nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: var(--text-dark);
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 14.5px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.admin-nav-btn:hover {
+  background: var(--bg-cream);
+}
+
+.admin-nav-btn.active {
+  background: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 8px 18px rgba(255, 122, 89, 0.28);
+}
+
+.admin-nav-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-cream);
+  color: var(--bg-primary);
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.admin-nav-btn.active .admin-nav-icon {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.admin-nav-label {
+  flex: 1;
+}
+
+@media (max-width: 992px) {
+  .admin-sidebar {
+    position: static;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .admin-nav-btn {
+    width: auto;
+    white-space: nowrap;
+  }
+}
+
+.admin-chart-card {
+  background: var(--bg-light);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+  height: 100%;
+}
+
+.admin-chart-card h3 {
+  font-size: 16px;
+  color: var(--bg-primary);
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 12px;
+}
+
+.admin-chart-card p {
+  text-align: center;
+  color: var(--text-muted);
+  padding: 60px 0;
+  font-size: 14px;
+}
+
+.user-card, .property-card {
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  margin-bottom: 12px;
+  background: var(--bg-light);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s;
+  overflow: hidden;
+}
+
+.user-card:hover, .property-card:hover {
+  border-color: transparent;
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.user-header, .property-header {
+  padding: 14px 20px;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  cursor: pointer;
+  background: var(--bg-cream);
+}
+
+.user-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 14px;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.user-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.user-name, .property-title {
+  font-weight: 600;
+  color: var(--text-dark);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.user-email, .property-location {
+  color: var(--text-muted);
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.expand-icon {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.user-details-expanded, .property-details-expanded {
+  padding: 24px;
+  border-top: 1px solid var(--border-light);
+}
+
+.user-details-expanded p, .property-details-expanded p {
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: var(--text-dark);
+}
+
+.user-details-expanded code, .property-details-expanded code {
+  background: var(--bg-cream);
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: var(--bg-primary);
+  border: 1px solid var(--border-light);
+  font-family: monospace;
+}
+
+.photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin: 24px 0;
+}
+
+.photos div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.photos img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-light);
+}
+
+.property-image-admin, .property-deed-admin {
+  margin: 24px 0;
+}
+
+.property-image-admin img {
+  max-width: 100%;
+  max-height: 300px;
+  margin-top: 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-light);
+}
+
+.property-deed-admin iframe {
+  width: 100%;
+  height: 400px;
+  margin-top: 12px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+}
+
+/* Rental income */
+.rental-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 16px 20px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  margin-bottom: 12px;
+  background: var(--bg-cream);
+  flex-wrap: wrap;
+}
+
+.rental-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.rental-card-title {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.rental-card-location {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.rental-card-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.rental-card-actions input {
+  padding: 10px 14px;
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-pill);
+  background: var(--bg-light);
+  width: 180px;
+}
+
+.rental-card-actions button {
+  padding: 10px 18px;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  background: var(--primary);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 6px 14px rgba(255, 122, 89, 0.25);
+}
+
+.rental-card-actions button:hover:not(:disabled) {
+  background: var(--primary-hover);
+}
+
+.rental-card-actions button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Approve / reject actions */
+.actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-light);
+}
+
+.actions button {
+  padding: 12px 20px;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  flex: 1;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.actions .approve {
+  background: var(--accent);
+  color: var(--bg-primary);
+  border: none;
+}
+
+.actions .approve:hover {
+  background: #22c9b3;
+}
+
+.actions .reject {
+  background: transparent;
+  color: #e0524f;
+  border: 1.5px solid #e0524f;
+}
+
+.actions .reject:hover {
+  background: #fdf1f0;
+}
