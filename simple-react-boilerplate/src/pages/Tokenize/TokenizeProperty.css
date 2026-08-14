@@ -1,0 +1,285 @@
+.tokenize-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(22, 33, 62, 0.72); 
+  backdrop-filter: blur(8px);
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.tokenize-modal-content {
+  background: var(--bg-light);
+  padding: 40px;
+  width: 100%;
+  max-width: 650px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  animation: scaleUp 0.3s ease;
+}
+
+@keyframes scaleUp {
+  from { opacity: 0; transform: scale(0.95) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.tokenize-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--bg-cream);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.tokenize-close:hover {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+.tokenize-modal-content h2 {
+  font-size: 24px;
+  margin: 0 0 28px;
+  color: var(--bg-primary);
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Step progress indicator */
+.tokenize-stepper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 28px;
+  padding: 0 8px;
+}
+
+.tokenize-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.tokenize-step-circle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-cream);
+  color: var(--text-muted);
+  border: 2px solid var(--border-light);
+  font-size: 13px;
+  transition: all 0.25s ease;
+}
+
+.tokenize-step.active .tokenize-step-circle {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 6px 14px rgba(255, 122, 89, 0.32);
+}
+
+.tokenize-step.done .tokenize-step-circle {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg-primary);
+}
+
+.tokenize-step-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.tokenize-step.active .tokenize-step-label {
+  color: var(--bg-primary);
+}
+
+.tokenize-step-line {
+  flex: 1;
+  height: 2px;
+  background: var(--border-light);
+  margin: 0 8px;
+  margin-bottom: 22px;
+  transition: background 0.3s ease;
+}
+
+.tokenize-step-line.done {
+  background: var(--accent);
+}
+
+/* File upload dropzones */
+.tokenize-dropzone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 24px 16px;
+  border: 1.5px dashed var(--border-light);
+  border-radius: var(--radius-md);
+  background: var(--bg-cream);
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.tokenize-dropzone:hover {
+  border-color: var(--primary);
+  background: rgba(255, 122, 89, 0.05);
+}
+
+.tokenize-dropzone span {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.tokenize-dropzone small {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.tokenize-dropzone input[type="file"] {
+  display: none;
+}
+
+.scrollable-form {
+  overflow-y: auto;
+  padding-right: 10px;
+  margin-bottom: 20px;
+}
+
+.scrollable-form::-webkit-scrollbar {
+  width: 6px;
+}
+.scrollable-form::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+  border-radius: 4px;
+}
+.scrollable-form::-webkit-scrollbar-thumb {
+  background: var(--primary); 
+  border-radius: 4px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text-dark);
+}
+
+.form-group small {
+  display: block;
+  margin-top: 6px;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+input[type="file"].form-control {
+  padding: 10px 14px;
+  background: var(--bg-cream);
+  border: 1px dashed var(--border-light);
+  cursor: pointer;
+}
+
+input[type="file"].form-control:hover {
+  border-color: var(--bg-primary);
+}
+
+.property-preview {
+  margin-top: 16px;
+  max-width: 100%;
+  border-radius: var(--radius-sm);
+  max-height: 250px;
+  object-fit: cover;
+  border: 1px solid var(--border-light);
+}
+
+.deed-preview-container {
+  margin-top: 16px;
+  padding: 16px;
+  background: var(--bg-cream);
+  border-radius: var(--radius-sm);
+  color: var(--bg-primary);
+  border: 1px dashed var(--border-light);
+  font-weight: 600;
+  text-align: center;
+}
+
+.tokenization-info {
+  background: var(--bg-cream);
+  padding: 24px;
+  border-radius: var(--radius-md);
+  margin: 20px 0;
+  border: 1px solid var(--border-light);
+}
+
+.tokenization-info h4 {
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: var(--bg-primary);
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 12px;
+}
+
+.tokenization-info p {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: 15px;
+  color: var(--text-dark);
+}
+
+.tokenization-info p:last-child {
+  margin-bottom: 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-light);
+  font-weight: 700;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: auto;
+}
+
+.modal-actions button {
+  flex: 1;
+}
