@@ -524,6 +524,33 @@
   margin-bottom: 10px;
 }
 
+.sold-out-panel {
+  text-align: center;
+  padding: 20px 16px;
+  border-radius: 14px;
+  background: var(--bg-cream, #faf6f2);
+  border: 1px dashed var(--border-light, #e6ddd4);
+}
+.sold-out-panel .sold-out-flag {
+  font-size: 30px;
+  display: block;
+  margin-bottom: 6px;
+}
+.sold-out-panel strong {
+  display: block;
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--bg-primary, #16213e);
+  margin-bottom: 6px;
+}
+.sold-out-panel p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-muted, #8a94ad);
+}
+.sold-out-panel b { color: var(--primary); }
+
 .data-list {
   list-style: none;
   padding: 0;

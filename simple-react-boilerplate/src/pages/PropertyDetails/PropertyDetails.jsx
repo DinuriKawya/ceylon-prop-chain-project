@@ -74,6 +74,7 @@ const PropertyDetails = ({ apartmentId, setActiveTab }) => {
 
   const hasImage = apartment.imageUrl && !imgError;
   const coords = findCityCoords(apartment.location);
+  const soldOut = apartment.tokensSold >= apartment.totalTokens;
 
   return (
     <div className="property-details-container">
@@ -262,7 +263,13 @@ const PropertyDetails = ({ apartmentId, setActiveTab }) => {
             </div>
             <div className="buy-box-supply">{apartment.tokensSold} / {apartment.totalTokens} tokens sold</div>
 
-            {!isVerified ? (
+            {soldOut ? (
+              <div className="sold-out-panel">
+                <span className="sold-out-flag">🏁</span>
+                <strong>Fully Sold Out</strong>
+                <p>All {apartment.totalTokens.toLocaleString()} tokens are owned. Check the <b>Top Holders</b> tab to see the current owners.</p>
+              </div>
+            ) : !isVerified ? (
               <p className="unverified-message">You must be KYC verified to purchase tokens.</p>
             ) : (
               <div className="buy-container">
