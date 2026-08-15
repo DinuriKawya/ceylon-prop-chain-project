@@ -3,7 +3,7 @@ import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from 'recharts';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faWallet, faChartPie, faMapMarkerAlt, faCoins, faGem, faHandHoldingUsd, faExchangeAlt, faMoneyBillWave, faBuilding,
-  faChevronRight, faPercent, faArrowUp, faArrowDown, faHistory, faCheckCircle, faAward
+  faChevronRight, faPercent, faArrowUp, faArrowDown, faHistory, faCheckCircle, faAward, faStore
 } from '@fortawesome/free-solid-svg-icons';
 import usePortfolioLogic from './usePortfolioLogic';
 import useTransactionsLogic from '../Transactions/useTransactionsLogic';
@@ -57,7 +57,12 @@ const Portfolio = ({ setActiveTab }) => {
     ownerBalances,
     handleWithdraw,
     claimableRentalIncome,
-    handleClaimRentalIncome
+    handleClaimRentalIncome,
+    myListings,
+    handleListForResale,
+    handleCancelListing,
+    saleAlerts,
+    dismissSaleAlerts
   } = usePortfolioLogic();
 
   const { account } = useWallet();
@@ -120,6 +125,19 @@ const Portfolio = ({ setActiveTab }) => {
         <h1>My Portfolio</h1>
         <p>Your token holdings and real-time analytics</p>
       </div>
+
+      {saleAlerts.length > 0 && (
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, flexWrap: 'wrap', background: 'rgba(22,163,74,0.1)', border: '1px solid rgba(22,163,74,0.3)', color: '#16a34a', borderRadius: 14, padding: '14px 18px', marginBottom: 20 }}>
+          <div style={{ fontSize: 14 }}>
+            <FontAwesomeIcon icon={faCheckCircle} className="me-2" />
+            <strong>Your resale {saleAlerts.length === 1 ? 'listing' : 'listings'} sold! </strong>
+            {saleAlerts.map((s, i) => (
+              <span key={s.key}>{i > 0 ? ' · ' : ''}{s.amount} tokens in {apartments[s.apartmentId]?.title || `Property ${s.apartmentId}`} for {s.totalEth} ETH</span>
+            ))}
+          </div>
+          <button onClick={dismissSaleAlerts} style={{ border: 'none', background: '#16a34a', color: '#fff', fontWeight: 600, fontSize: 13, padding: '7px 16px', borderRadius: 999, cursor: 'pointer', flexShrink: 0 }}>Dismiss</button>
+        </div>
+      )}
 
       {hasHoldings && hasListed && (
         <div className="d-inline-flex flex-wrap gap-1 p-1 rounded-pill mb-3 portfolio-tab-bar">
@@ -295,6 +313,29 @@ const Portfolio = ({ setActiveTab }) => {
                   </div>
                 </div>
               </div>
+
+              <div className="portfolio-action-box mt-3" style={{ height: 'auto' }}>
+                <h4><FontAwesomeIcon icon={faStore} className="me-2" />List Tokens for Resale</h4>
+                <div className="d-flex gap-2 flex-wrap">
+                  <input type="number" min="1" max={selected.amount} placeholder={`Amount (max ${selected.amount})`} value={form.resaleAmount} onChange={e => updateForm(selected.aptId, 'resaleAmount', e.target.value)} style={{ flex: 1, minWidth: 140 }} />
+                  <input type="number" min="0" step="0.0001" placeholder="Price / token (ETH)" value={form.resalePrice} onChange={e => updateForm(selected.aptId, 'resalePrice', e.target.value)} style={{ flex: 1, minWidth: 140 }} />
+                </div>
+                <button className="btn-primary mt-2" onClick={() => handleListForResale(parseInt(selected.aptId), selected.amount)} disabled={loading}>
+                  {isActionActive(parseInt(selected.aptId), 'resale') ? 'Listing...' : 'List for Resale'}
+                </button>
+              </div>
+
+              {myListings.filter(l => String(l.apartmentId) === String(selected.aptId)).length > 0 && (
+                <div className="portfolio-action-box mt-3" style={{ height: 'auto' }}>
+                  <h4><FontAwesomeIcon icon={faStore} className="me-2" />My Active Resale Listings</h4>
+                  {myListings.filter(l => String(l.apartmentId) === String(selected.aptId)).map(l => (
+                    <div key={l.id} className="d-flex align-items-center justify-content-between" style={{ padding: '8px 0', borderBottom: '1px solid rgba(0,0,0,0.06)' }}>
+                      <span style={{ fontSize: 14 }}>{l.amount} tokens @ {l.pricePerToken} ETH <span style={{ color: 'var(--text-muted)' }}>({l.total} ETH total)</span></span>
+                      <button className="btn-outline" style={{ padding: '6px 14px', fontSize: 13 }} onClick={() => handleCancelListing(l.id)} disabled={loading}>Cancel</button>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           )}
 
