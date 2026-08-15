@@ -8,8 +8,9 @@ import cityMapData from '../../data/city_map_data.json';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faArrowLeft, faMapMarkerAlt, faCoins, faTrophy, faChartLine, faCalculator, faImage, faCheckCircle,
-  faWallet, faListAlt, faSeedling, faTag, faShieldAlt
+  faWallet, faListAlt, faSeedling, faTag, faShieldAlt, faStore
 } from '@fortawesome/free-solid-svg-icons';
+import ResalePanel from './ResalePanel';
 
 const SCORE_METRIC_META = {
   growthPotential: { label: 'Growth Potential', icon: faSeedling, color: '#16a34a', bg: 'rgba(22, 163, 74, 0.12)' },
@@ -43,7 +44,8 @@ const findCityCoords = (location) => {
 const TABS = [
   { key: 'overview', label: 'Overview', icon: faListAlt },
   { key: 'roi', label: 'ROI Simulator', icon: faCalculator },
-  { key: 'holders', label: 'Top Holders', icon: faTrophy }
+  { key: 'holders', label: 'Top Holders', icon: faTrophy },
+  { key: 'resale', label: 'Resale', icon: faStore }
 ];
 
 const PropertyDetails = ({ apartmentId, setActiveTab }) => {
@@ -230,6 +232,8 @@ const PropertyDetails = ({ apartmentId, setActiveTab }) => {
               )}
             </div>
           )}
+
+          {tab === 'resale' && <ResalePanel apartmentId={apartmentId} />}
 
           {tab === 'holders' && (
             <div className="details-section fade-in-item">

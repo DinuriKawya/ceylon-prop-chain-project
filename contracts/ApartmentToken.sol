@@ -438,4 +438,103 @@ contract ApartmentToken {
         
         return (topAddresses, topAmounts);
     }
+
+    //  RESALE MARKET 
+    struct ResaleListing {
+        uint256 id;
+        uint256 apartmentId;
+        address seller;
+        uint256 amount;
+        uint256 pricePerToken; 
+        bool active;
+    }
+
+    ResaleListing[] public resaleListings;
+
+    event ResaleListed(uint256 indexed listingId, uint256 indexed apartmentId, address indexed seller, uint256 amount, uint256 pricePerToken);
+    event ResaleSold(uint256 indexed listingId, uint256 indexed apartmentId, address seller, address buyer, uint256 amount, uint256 totalPrice);
+    event ResaleCancelled(uint256 indexed listingId);
+
+    function listForResale(uint256 _apartmentId, uint256 _amount, uint256 _pricePerToken) public onlyVerifiedUser returns (uint256) {
+        require(_apartmentId < apartments.length, "Apartment does not exist");
+        require(_amount > 0, "Amount must be greater than 0");
+        require(_pricePerToken > 0, "Price must be greater than 0");
+        require(userTokenBalance[_apartmentId][msg.sender] >= _amount, "You don't own enough tokens");
+
+        uint256 id = resaleListings.length;
+        resaleListings.push(ResaleListing({
+            id: id,
+            apartmentId: _apartmentId,
+            seller: msg.sender,
+            amount: _amount,
+            pricePerToken: _pricePerToken,
+            active: true
+        }));
+
+        emit ResaleListed(id, _apartmentId, msg.sender, _amount, _pricePerToken);
+        return id;
+    }
+
+    function buyResaleListing(uint256 _listingId) public payable onlyVerifiedUser {
+        require(_listingId < resaleListings.length, "Listing does not exist");
+        ResaleListing storage lst = resaleListings[_listingId];
+        require(lst.active, "Listing is not active");
+        require(msg.sender != lst.seller, "You cannot buy your own listing");
+
+        uint256 totalPrice = lst.pricePerToken * lst.amount;
+        require(msg.value >= totalPrice, "Insufficient payment");
+
+        uint256 aptId = lst.apartmentId;
+        require(userTokenBalance[aptId][lst.seller] >= lst.amount, "Seller no longer holds enough tokens");
+
+        lst.active = false;
+
+        userTokenBalance[aptId][lst.seller] -= lst.amount;
+        userTokenBalance[aptId][msg.sender] += lst.amount;
+
+        for (uint256 i = 0; i < apartmentHolders[aptId].length; i++) {
+            if (apartmentHolders[aptId][i].holder == lst.seller) {
+                if (apartmentHolders[aptId][i].amount == lst.amount) {
+                    apartmentHolders[aptId][i] = apartmentHolders[aptId][apartmentHolders[aptId].length - 1];
+                    apartmentHolders[aptId].pop();
+                } else {
+                    apartmentHolders[aptId][i].amount -= lst.amount;
+                }
+                break;
+            }
+        }
+
+        bool found = false;
+        for (uint256 i = 0; i < apartmentHolders[aptId].length; i++) {
+            if (apartmentHolders[aptId][i].holder == msg.sender) {
+                apartmentHolders[aptId][i].amount += lst.amount;
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            apartmentHolders[aptId].push(TokenHolder(msg.sender, lst.amount));
+        }
+        
+        payable(lst.seller).transfer(totalPrice);
+        if (msg.value > totalPrice) {
+            payable(msg.sender).transfer(msg.value - totalPrice);
+        }
+
+        emit ResaleSold(_listingId, aptId, lst.seller, msg.sender, lst.amount, totalPrice);
+    }
+
+    function cancelResaleListing(uint256 _listingId) public {
+        require(_listingId < resaleListings.length, "Listing does not exist");
+        ResaleListing storage lst = resaleListings[_listingId];
+        require(lst.seller == msg.sender, "Only the seller can cancel");
+        require(lst.active, "Listing is not active");
+
+        lst.active = false;
+        emit ResaleCancelled(_listingId);
+    }
+
+    function getResaleListingCount() public view returns (uint256) {
+        return resaleListings.length;
+    }
 }
