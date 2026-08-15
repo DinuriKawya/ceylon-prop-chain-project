@@ -1,0 +1,42 @@
+.resale-intro { font-size: 13px; color: var(--text-muted); margin: 6px 0 18px; line-height: 1.5; }
+
+.resale-list { display: flex; flex-direction: column; gap: 12px; }
+
+.resale-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border: 1px solid var(--border-light, #eee);
+  border-radius: 14px;
+  padding: 14px 18px;
+  background: #fff;
+}
+.resale-info { flex: 1; min-width: 0; }
+.resale-amount { font-size: 15px; font-weight: 700; color: var(--text-dark, #16213e); }
+.resale-seller { font-size: 12px; color: var(--text-muted); margin-top: 3px; }
+
+.resale-price { text-align: right; flex-shrink: 0; }
+.resale-per { font-size: 15px; font-weight: 700; color: var(--primary); }
+.resale-per span { font-size: 11px; color: var(--text-muted); font-weight: 500; }
+.resale-total { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+
+.resale-buy-btn {
+  flex-shrink: 0;
+  border: none;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+  box-shadow: 0 6px 16px rgba(255, 122, 89, 0.3);
+}
+.resale-buy-btn:hover:not(:disabled) { transform: translateY(-1px); }
+.resale-buy-btn:disabled { opacity: 0.55; cursor: not-allowed; box-shadow: none; }
+
+@media (max-width: 560px) {
+  .resale-row { flex-wrap: wrap; }
+  .resale-price { text-align: left; }
+}
