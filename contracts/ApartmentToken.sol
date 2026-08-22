@@ -27,6 +27,7 @@ contract ApartmentToken {
         string imageUrl;
         string deedUrl;
         bool isRejected;
+        string rejectionReason;
     }
     
     struct TokenHolder {
@@ -53,7 +54,7 @@ contract ApartmentToken {
     event TokensTransferred(uint256 indexed apartmentId, address indexed from, address indexed to, uint256 amount);
     event TokensSold(uint256 indexed apartmentId, address indexed seller, uint256 amount, uint256 totalValue);
     event FundsWithdrawn(uint256 indexed apartmentId, address indexed owner, uint256 amount);
-    event ApartmentRejected(uint256 indexed id);
+    event ApartmentRejected(uint256 indexed id, string reason);
     event RentalIncomeDistributed(uint256 indexed apartmentId, uint256 totalAmount);
     event RentalIncomeClaimed(uint256 indexed apartmentId, address indexed holder, uint256 amount);
 
@@ -201,7 +202,8 @@ contract ApartmentToken {
             createdAt: block.timestamp,
             imageUrl: _imageUrl,
             deedUrl: _deedUrl,
-            isRejected: false
+            isRejected: false,
+            rejectionReason: ""
         }));
 
         emit ApartmentCreated(apartments.length - 1, _title);
@@ -214,11 +216,13 @@ contract ApartmentToken {
         emit ApartmentVerified(_apartmentId);
     }
 
-    function rejectApartment(uint256 _apartmentId) public onlyOwner {
+    function rejectApartment(uint256 _apartmentId, string memory _reason) public onlyOwner {
         require(_apartmentId < apartments.length, "Apartment does not exist");
         require(!apartments[_apartmentId].isVerified, "Cannot reject an already verified apartment");
+        require(bytes(_reason).length > 0, "Rejection reason is required");
         apartments[_apartmentId].isRejected = true;
-        emit ApartmentRejected(_apartmentId);
+        apartments[_apartmentId].rejectionReason = _reason;
+        emit ApartmentRejected(_apartmentId, _reason);
     }
     
     function getAllApartments() public view returns (
@@ -233,7 +237,8 @@ contract ApartmentToken {
         string[] memory imageUrls,
         string[] memory deedUrls,
         address[] memory owners,
-        bool[] memory isRejected
+        bool[] memory isRejected,
+        string[] memory rejectionReasons
     ) {
         uint256 len = apartments.length;
         ids = new uint256[](len);
@@ -248,6 +253,7 @@ contract ApartmentToken {
         deedUrls = new string[](len);
         owners = new address[](len);
         isRejected = new bool[](len);
+        rejectionReasons = new string[](len);
 
         for (uint256 i = 0; i < len; i++) {
             ids[i] = apartments[i].id;
@@ -262,6 +268,7 @@ contract ApartmentToken {
             deedUrls[i] = apartments[i].deedUrl;
             owners[i] = apartments[i].owner;
             isRejected[i] = apartments[i].isRejected;
+            rejectionReasons[i] = apartments[i].rejectionReason;
         }
     }
     
@@ -371,8 +378,6 @@ contract ApartmentToken {
         emit FundsWithdrawn(_apartmentId, msg.sender, _amount);
     }
 
-    // Admin deposits real-world rent collected for an apartment; it's split
-    // proportionally across everyone currently holding tokens in it.
     function distributeRentalIncome(uint256 _apartmentId) public payable onlyOwner {
         require(_apartmentId < apartments.length, "Apartment does not exist");
         require(apartments[_apartmentId].isVerified, "Apartment not verified");
