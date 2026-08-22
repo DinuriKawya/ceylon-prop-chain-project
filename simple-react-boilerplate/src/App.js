@@ -6,6 +6,7 @@ import { ChatProvider, useChat } from './context/ChatContext';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import ChatWidget from './components/ChatWidget/ChatWidget';
+import PropertyStatusNotifications from './components/PropertyStatusNotifications/PropertyStatusNotifications';
 import Home from './pages/Home/Home';
 import Marketplace from './pages/Marketplace/Marketplace';
 import TokenizeProperty from './pages/Tokenize/TokenizeProperty';
@@ -13,7 +14,6 @@ import Portfolio from './pages/Portfolio/Portfolio';
 import AdminDashboard from './pages/Admin/AdminDashboard';
 import PropertyDetails from './pages/PropertyDetails/PropertyDetails';
 import Transactions from './pages/Transactions/Transactions';
-import Support from './pages/Support/Support';
 import VerifyCertificate from './pages/Verify/VerifyCertificate';
 import './index.css';
 
@@ -44,11 +44,11 @@ const AppContent = () => {
         {activeTab === 'portfolio' && <Portfolio setActiveTab={setActiveTab} />}
         {activeTab === 'transactions' && <Transactions />}
         {activeTab === 'admin' && <AdminDashboard setActiveTab={setActiveTab} />}
-        {activeTab === 'support' && <Support setActiveTab={setActiveTab} />}
       </div>
 
       {activeTab === 'home' && <Footer setActiveTab={setActiveTab} />}
 
+      <PropertyStatusNotifications />
       <ChatWidget />
     </div>
   );
