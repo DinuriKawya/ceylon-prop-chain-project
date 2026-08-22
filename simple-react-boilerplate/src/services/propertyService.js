@@ -27,8 +27,8 @@ export const approveProperty = async (contract, account, apartmentId) => {
   await contract.methods.verifyApartment(apartmentId, true).send({ from: account, gas: DEFAULT_GAS });
 };
 
-export const rejectProperty = async (contract, account, apartmentId) => {
-  await contract.methods.rejectApartment(apartmentId).send({ from: account, gas: DEFAULT_GAS });
+export const rejectProperty = async (contract, account, apartmentId, reason) => {
+  await contract.methods.rejectApartment(apartmentId, reason).send({ from: account, gas: DEFAULT_GAS });
 };
 
 export const distributeRentalIncome = async (contract, web3, account, apartmentId, amountEth) => {

@@ -8,7 +8,7 @@ import cityMapData from '../../data/city_map_data.json';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faArrowLeft, faMapMarkerAlt, faCoins, faTrophy, faChartLine, faCalculator, faImage, faCheckCircle,
-  faWallet, faListAlt, faSeedling, faTag, faShieldAlt, faStore
+  faWallet, faListAlt, faSeedling, faTag, faShieldAlt, faStore, faUser
 } from '@fortawesome/free-solid-svg-icons';
 import ResalePanel from './ResalePanel';
 
@@ -54,8 +54,11 @@ const PropertyDetails = ({ apartmentId, setActiveTab }) => {
     isVerified,
     buyAmount,
     setBuyAmount,
+    effectiveMinInvestmentEth,
+    minTokensNeeded,
     loading,
     topHolders,
+    ownerName,
     investmentScore,
     roiYears,
     setRoiYears,
@@ -261,12 +264,7 @@ const PropertyDetails = ({ apartmentId, setActiveTab }) => {
               <span>Token Price</span>
               <strong>{apartment.tokenPrice} <em>ETH</em></strong>
             </div>
-
-            <div className="progress-bar-container">
-              <div className="progress-bar-fill" style={{ width: `${soldPercentage}%` }}></div>
-            </div>
-            <div className="buy-box-supply">{apartment.tokensSold} / {apartment.totalTokens} tokens sold</div>
-
+          
             {soldOut ? (
               <div className="sold-out-panel">
                 <span className="sold-out-flag">🏁</span>
@@ -281,10 +279,17 @@ const PropertyDetails = ({ apartmentId, setActiveTab }) => {
                   <input
                     type="number"
                     className="buy-input"
-                    placeholder="Enter amount to buy"
+                    placeholder={`Enter amount`}
+                    min={minTokensNeeded}
                     value={buyAmount}
                     onChange={(e) => setBuyAmount(e.target.value)}
                   />
+                  {buyAmount && parseFloat(buyAmount) > 0 && (
+                    <p className="buy-cost-preview">
+                      <FontAwesomeIcon icon={faWallet} className="me-1" />
+                      {buyAmount} token{parseFloat(buyAmount) === 1 ? '' : 's'} ≈ {(parseFloat(buyAmount) * apartment.tokenPrice).toFixed(6).replace(/\.?0+$/, '')} ETH
+                    </p>
+                  )}
                 </div>
                 <button
                   className="buy-btn buy-btn-full"
@@ -299,10 +304,14 @@ const PropertyDetails = ({ apartmentId, setActiveTab }) => {
           </div>
 
           <div className="listed-by-card">
-            <div className="listed-by-avatar"><FontAwesomeIcon icon={faWallet} /></div>
+            <div className="listed-by-avatar"><FontAwesomeIcon icon={faUser} /></div>
             <div>
               <small>Listed By</small>
-              <code>{formatAddress(apartment.owner)}</code>
+              {ownerName ? (
+                <strong className="listed-by-name">{ownerName}</strong>
+              ) : (
+                <code>{formatAddress(apartment.owner)}</code>
+              )}
             </div>
           </div>
 

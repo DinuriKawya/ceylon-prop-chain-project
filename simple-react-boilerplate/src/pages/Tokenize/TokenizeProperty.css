@@ -32,6 +32,35 @@
   animation: scaleUp 0.3s ease;
 }
 
+.tokenize-single-page {
+  max-width: 720px;
+}
+
+.tokenize-section {
+  margin-bottom: 28px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.tokenize-section:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.tokenize-section-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--bg-primary);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.tokenize-section-title svg {
+  color: var(--primary);
+}
+
 @keyframes scaleUp {
   from { opacity: 0; transform: scale(0.95) translateY(10px); }
   to { opacity: 1; transform: scale(1) translateY(0); }

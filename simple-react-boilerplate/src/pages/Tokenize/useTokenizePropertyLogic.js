@@ -8,7 +8,7 @@ const useTokenizePropertyLogic = (onClose) => {
   const { refreshData } = useProperties();
   const [loading, setLoading] = useState(false);
   const [newApartment, setNewApartment] = useState({
-    title: '', location: '', description: '', totalTokens: '', tokenPrice: '', imageFile: null, imagePreview: null, deedFile: null, deedPreview: null
+    title: '', location: '', description: '', totalTokens: '', tokenPrice: '', imageFile: null, deedFile: null
   });
 
   const handleSubmit = async () => {
@@ -21,7 +21,7 @@ const useTokenizePropertyLogic = (onClose) => {
     try {
       await submitPropertyForVerification(contract, web3, newApartment, account);
       alert('Property submitted for admin verification!');
-      setNewApartment({ title: '', location: '', description: '', totalTokens: '', tokenPrice: '', imageFile: null, imagePreview: null, deedFile: null, deedPreview: null });
+      setNewApartment({ title: '', location: '', description: '', totalTokens: '', tokenPrice: '', imageFile: null, deedFile: null });
       refreshData();
       if (onClose) onClose();
     } catch(e) { 

@@ -3,8 +3,9 @@ import { useWallet } from '../../hooks/useWallet';
 import { useProperties } from '../../hooks/useProperties';
 import { useUser } from '../../hooks/useUser';
 import { buyTokens } from '../../services/tokenService';
-import { loadTopHoldersForApartment, getPastTransactions } from '../../services/blockchain/contractService';
+import { loadTopHoldersForApartment, getPastTransactions, getUserName } from '../../services/blockchain/contractService';
 import { analyzeLocation, calculateInvestmentScore } from '../../services/mlService';
+import { MIN_INVESTMENT_ETH } from '../../utils/constants';
 
 const usePropertyDetailsLogic = (apartmentId) => {
   const { account, contract, web3 } = useWallet();
@@ -13,12 +14,21 @@ const usePropertyDetailsLogic = (apartmentId) => {
   const [buyAmount, setBuyAmount] = useState('');
   const [loading, setLoading] = useState(false);
   const [topHolders, setTopHolders] = useState(null);
+  const [ownerName, setOwnerName] = useState(null);
   const [transactions, setTransactions] = useState([]);
   const [investmentScore, setInvestmentScore] = useState(null);
   const [roiYears, setRoiYears] = useState(3);
   const [roiAmount, setRoiAmount] = useState(10);
 
   const apartment = apartments && apartments[apartmentId] ? apartments[apartmentId] : null;
+
+
+  const remainingTokens = apartment ? apartment.totalTokens - apartment.tokensSold : 0;
+  const remainingValueEth = apartment ? remainingTokens * apartment.tokenPrice : 0;
+  const effectiveMinInvestmentEth = apartment ? Math.min(MIN_INVESTMENT_ETH, remainingValueEth) : 0;
+  const minTokensNeeded = apartment && apartment.tokenPrice > 0
+    ? Math.max(1, Math.ceil(effectiveMinInvestmentEth / apartment.tokenPrice))
+    : 1;
 
   const fetchDetails = useCallback(async () => {
     if (!contract || !web3 || !apartment) return;
@@ -38,6 +48,21 @@ const usePropertyDetailsLogic = (apartmentId) => {
     fetchDetails();
   }, [fetchDetails]);
 
+
+  useEffect(() => {
+    if (!contract || !apartment || !apartment.owner) {
+      setOwnerName(null);
+      return;
+    }
+    let cancelled = false;
+    getUserName(contract, apartment.owner).then((name) => {
+      if (!cancelled) setOwnerName(name);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [contract, apartment]);
+
   // ML investment score
   useEffect(() => {
     if (!apartment) return;
@@ -55,6 +80,15 @@ const usePropertyDetailsLogic = (apartmentId) => {
       alert('Enter a valid amount');
       return;
     }
+
+    const totalCostEth = parseFloat(buyAmount) * apartment.tokenPrice;
+    if (totalCostEth < effectiveMinInvestmentEth) {
+      alert(
+        `Minimum investment is ${effectiveMinInvestmentEth.toFixed(4).replace(/\.?0+$/, '')} ETH `
+      );
+      return;
+    }
+
     setLoading(true);
     try {
       await buyTokens(contract, web3, account, apartmentId, buyAmount, apartment.tokenPrice);
@@ -108,8 +142,11 @@ const usePropertyDetailsLogic = (apartmentId) => {
     isVerified,
     buyAmount,
     setBuyAmount,
+    effectiveMinInvestmentEth,
+    minTokensNeeded,
     loading,
     topHolders,
+    ownerName,
     transactions,
     investmentScore,
     roiYears,
