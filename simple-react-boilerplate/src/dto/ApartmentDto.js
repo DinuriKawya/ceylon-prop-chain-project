@@ -1,5 +1,5 @@
 export default class ApartmentDto {
-  constructor(id, title, location, description, totalTokens, tokenPrice, tokensSold, isVerified, availableTokens, owner, imageUrl, deedUrl, isRejected) {
+  constructor(id, title, location, description, totalTokens, tokenPrice, tokensSold, isVerified, availableTokens, owner, imageUrl, deedUrl, isRejected, rejectionReason) {
     this.id = id;
     this.title = title;
     this.location = location;
@@ -13,5 +13,6 @@ export default class ApartmentDto {
     this.imageUrl = imageUrl;
     this.deedUrl = deedUrl;
     this.isRejected = isRejected;
+    this.rejectionReason = rejectionReason || '';
   }
 }

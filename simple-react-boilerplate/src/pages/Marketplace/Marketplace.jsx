@@ -40,9 +40,6 @@ const Marketplace = ({ onViewDetails }) => {
 
                 <div className="ownership-verified">
                   <FontAwesomeIcon icon={faCheckCircle} className="verified-icon" /> Ownership Verified
-                  {apt.deedUrl && (
-                    <a href={apt.deedUrl} target="_blank" rel="noopener noreferrer" className="deed-link" onClick={e => e.stopPropagation()}> · View Deed</a>
-                  )}
                 </div>
 
                 <div className="quick-stats">

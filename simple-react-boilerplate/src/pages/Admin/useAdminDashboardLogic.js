@@ -20,6 +20,8 @@ const useAdminDashboardLogic = () => {
   const [expandedProperty, setExpandedProperty] = useState(null);
   const [loading, setLoading] = useState(false);
   const [rentalAmounts, setRentalAmounts] = useState({});
+  const [rejectionReasons, setRejectionReasons] = useState({});
+  const [rejectingPropertyId, setRejectingPropertyId] = useState(null);
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -94,11 +96,19 @@ const useAdminDashboardLogic = () => {
     setLoading(false);
   };
 
+  const updateRejectionReason = (propertyId, value) => {
+    setRejectionReasons(prev => ({ ...prev, [propertyId]: value }));
+  };
+
   const handleRejectProperty = async (propertyId) => {
+    const reason = (rejectionReasons[propertyId] || '').trim();
+    if (!reason) { alert('Reason for rejecting this property.'); return; }
     setLoading(true);
     try {
-      await rejectProperty(contract, account, propertyId);
-      alert('Property rejected');
+      await rejectProperty(contract, account, propertyId, reason);
+      alert('Property rejected.');
+      setRejectionReasons(prev => ({ ...prev, [propertyId]: '' }));
+      setRejectingPropertyId(null);
       refreshData();
     } catch(e) { alert(e.message); }
     setLoading(false);
@@ -162,6 +172,10 @@ const useAdminDashboardLogic = () => {
     verifiedApartments,
     rentalAmounts,
     updateRentalAmount,
+    rejectionReasons,
+    updateRejectionReason,
+    rejectingPropertyId,
+    setRejectingPropertyId,
     transactions,
     pendingProperties,
     pendingUsers,

@@ -168,6 +168,10 @@ const AdminDashboard = ({ setActiveTab }) => {
     verifiedApartments,
     rentalAmounts,
     updateRentalAmount,
+    rejectionReasons,
+    updateRejectionReason,
+    rejectingPropertyId,
+    setRejectingPropertyId,
     pendingProperties,
     pendingUsers,
     registeredUsers,
@@ -459,10 +463,36 @@ const AdminDashboard = ({ setActiveTab }) => {
                     isExpanded={expandedProperty === idx}
                     onToggle={() => setExpandedProperty(expandedProperty === idx ? null : idx)}
                     actions={
-                      <div className="actions">
-                        <button className="approve" onClick={() => handleApproveProperty(prop.id)} disabled={loading}><FontAwesomeIcon icon={faCheck} className="me-2" />Approve Property & List</button>
-                        <button className="reject" onClick={() => handleRejectProperty(prop.id)} disabled={loading}><FontAwesomeIcon icon={faTimes} className="me-2" />Reject Property</button>
-                      </div>
+                      rejectingPropertyId === prop.id ? (
+                        <div className="actions">
+                          <textarea
+                            placeholder="Reason for rejection (the lister will be notified with this)"
+                            value={rejectionReasons[prop.id] || ''}
+                            onChange={e => updateRejectionReason(prop.id, e.target.value)}
+                            rows={2}
+                            autoFocus
+                            style={{ width: '100%', resize: 'vertical', borderRadius: 10, border: '1px solid var(--border-light)', padding: '8px 10px', fontSize: 13, marginBottom: 8 }}
+                          />
+                          <div style={{ display: 'flex', gap: 10 }}>
+                            <button
+                              className="btn btn-sm btn-outline-secondary rounded-pill"
+                              onClick={() => setRejectingPropertyId(null)}
+                              disabled={loading}
+                              style={{ flex: 1 }}
+                            >
+                              Cancel
+                            </button>
+                            <button className="reject" style={{ flex: 1 }} onClick={() => handleRejectProperty(prop.id)} disabled={loading}>
+                              <FontAwesomeIcon icon={faTimes} className="me-2" />Confirm Rejection
+                            </button>
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="actions">
+                          <button className="approve" onClick={() => handleApproveProperty(prop.id)} disabled={loading}><FontAwesomeIcon icon={faCheck} className="me-2" />Approve Property & List</button>
+                          <button className="reject" onClick={() => setRejectingPropertyId(prop.id)} disabled={loading}><FontAwesomeIcon icon={faTimes} className="me-2" />Reject Property</button>
+                        </div>
+                      )
                     }
                   />
                 ))}

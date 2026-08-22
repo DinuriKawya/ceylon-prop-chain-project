@@ -44,7 +44,8 @@ export const loadApartments = async (contract, web3) => {
       result[10][i],
       result[8][i],
       result[9][i],
-      result[11][i]
+      result[11][i],
+      result[12][i]
     ));
   }
   return apartmentsList;
@@ -70,6 +71,17 @@ export const loadPendingUsers = async (contract, account) => {
 export const loadVerifiedUsers = async (contract) => {
   if (!contract) return [];
   return await contract.methods.getAllVerifiedUsers().call();
+};
+
+export const getUserName = async (contract, address) => {
+  if (!contract || !address) return null;
+  try {
+    const info = await contract.methods.getUserInfo(address).call();
+    return info[0] && info[0].length > 0 ? info[0] : null;
+  } catch (e) {
+    console.log("Could not fetch user name for:", address);
+    return null;
+  }
 };
 
 export const loadVerifiedUsersDetailed = async (contract) => {
