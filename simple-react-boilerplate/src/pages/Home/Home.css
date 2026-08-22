@@ -260,6 +260,11 @@
   font-size: 15px;
   margin-bottom: 16px;
 }
+.ml-filter-hint {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 10px;
+}
 .ml-features li {
   margin-bottom: 16px;
   display: flex;

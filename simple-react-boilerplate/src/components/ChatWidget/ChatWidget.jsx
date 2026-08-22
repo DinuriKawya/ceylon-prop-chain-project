@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRobot, faCommentDots, faComments, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faRobot, faCommentDots, faComments, faTimes, faMicrophone } from '@fortawesome/free-solid-svg-icons';
 import { useChat } from '../../context/ChatContext';
 import './ChatWidget.css';
 
@@ -17,8 +17,24 @@ const ChatWidget = () => {
     isTyping,
     chatAreaRef,
     sendChatMessage,
-    handleChatKeyDown
+    handleChatKeyDown,
+    voiceSupported,
+    isListening,
+    toggleVoiceInput
   } = useChat();
+
+  const chatInputRef = useRef(null);
+
+  useEffect(() => {
+    if (isListening && chatInputRef.current) {
+      const el = chatInputRef.current;
+      el.scrollLeft = el.scrollWidth;
+      try {
+        el.setSelectionRange(chatMessage.length, chatMessage.length);
+      } catch (e) {
+      }
+    }
+  }, [chatMessage, isListening]);
 
   useEffect(() => {
     if (!isHighlighted) return;
@@ -81,14 +97,27 @@ const ChatWidget = () => {
           </div>
           <div className="chat-input-area">
             <input
+              ref={chatInputRef}
               type="text"
-              placeholder="Ask about investment opportunities..."
+              placeholder={isListening ? 'Listening...' : 'Ask about investment opportunities...'}
               value={chatMessage}
               onChange={(e) => setChatMessage(e.target.value)}
               onKeyDown={handleChatKeyDown}
               className="chat-input"
               disabled={isTyping}
             />
+            {voiceSupported && (
+              <button
+                type="button"
+                className={`chat-mic-btn ${isListening ? 'is-listening' : ''}`}
+                onClick={toggleVoiceInput}
+                disabled={isTyping}
+                aria-label={isListening ? 'Stop voice input' : 'Speak your question'}
+                title={isListening ? 'Stop voice input' : 'Speak your question'}
+              >
+                <FontAwesomeIcon icon={faMicrophone} />
+              </button>
+            )}
             <button className="btn-primary" onClick={() => sendChatMessage()} disabled={isTyping}>{isTyping ? '...' : 'Send'}</button>
           </div>
           <div className="quick-questions">

@@ -11,10 +11,15 @@ const Home = ({ setActiveTab }) => {
   const {
     account,
     connectToMetaMask,
-    mlLocation,
-    setMlLocation,
+    cityOptions,
+    postalOptions,
+    districtOptions,
+    mlCity,
+    setMlCity,
     mlPostalCode,
     setMlPostalCode,
+    mlDistrict,
+    setMlDistrict,
     mlResult,
     handleAnalyzeLocation
   } = useHomeLogic();
@@ -87,10 +92,40 @@ const Home = ({ setActiveTab }) => {
             <div className="ml-demo reveal-on-scroll" style={{transitionDelay: '0.4s'}}>
               <div className="ml-card">
                 <h3>Location Cluster Predictor</h3>
-                <input type="text" placeholder="Enter city name (e.g., Kadawatha)" value={mlLocation} onChange={(e) => setMlLocation(e.target.value)} className="ml-input" />
-                <input type="text" placeholder="Postal code (optional, e.g., 11850)" value={mlPostalCode} onChange={(e) => setMlPostalCode(e.target.value)} className="ml-input" />
+                <p className="ml-filter-hint">Pick one — city, postal code, or district:</p>
+                <select className="ml-input" value={mlCity} onChange={(e) => setMlCity(e.target.value)}>
+                  <option value="">City</option>
+                  {cityOptions.map((c) => (<option key={c} value={c}>{c}</option>))}
+                </select>
+                <select className="ml-input" value={mlPostalCode} onChange={(e) => setMlPostalCode(e.target.value)}>
+                  <option value="">Postal Code</option>
+                  {postalOptions.map((p) => (<option key={p.code} value={p.code}>{p.code} — {p.city}</option>))}
+                </select>
+                <select className="ml-input" value={mlDistrict} onChange={(e) => setMlDistrict(e.target.value)}>
+                  <option value="">District</option>
+                  {districtOptions.map((d) => (<option key={d} value={d}>{d}</option>))}
+                </select>
                 <button className="btn-primary" onClick={handleAnalyzeLocation}>Analyze Location →</button>
-                {mlResult && (<div className="ml-result"><h4>Analysis Result</h4><div className="result-item"><strong>Cluster:</strong> <span className={`cluster ${mlResult.cluster === 'Expensive & Stable' ? 'expensive' : mlResult.cluster === 'Fast Growing' ? 'growing' : 'budget'}`}>{mlResult.cluster}</span></div><div className="result-item"><strong>Average Price:</strong> Rs {mlResult.avgPrice} /sqft</div><div className="result-item"><strong>Growth Rate:</strong> {mlResult.growth !== null ? `${mlResult.growth}% (1-year)` : 'Insufficient data for trend'}</div><div className="result-item"><strong>Similar Cities:</strong> {mlResult.similar.join(', ')}</div>{mlResult.note && (<div className="result-item ml-note">{mlResult.note}</div>)}</div>)}
+                {mlResult && mlResult.level === 'district' && (
+                  <div className="ml-result">
+                    <h4>Analysis Result</h4>
+                    <div className="result-item"><strong>District:</strong> {mlResult.district}</div>
+                    <div className="result-item"><strong>Cluster:</strong> <span className={`cluster ${mlResult.cluster === 'Expensive & Stable' ? 'expensive' : mlResult.cluster === 'Fast Growing' ? 'growing' : 'budget'}`}>{mlResult.cluster}</span></div>
+                    <div className="result-item"><strong>Average Price:</strong> Rs {mlResult.avgPrice} /sqft</div>
+                    <div className="result-item"><strong>Based On:</strong> {mlResult.listingCount} listings</div>
+                    {mlResult.note && (<div className="result-item ml-note">{mlResult.note}</div>)}
+                  </div>
+                )}
+                {mlResult && mlResult.level === 'city' && (
+                  <div className="ml-result">
+                    <h4>Analysis Result</h4>
+                    <div className="result-item"><strong>Cluster:</strong> <span className={`cluster ${mlResult.cluster === 'Expensive & Stable' ? 'expensive' : mlResult.cluster === 'Fast Growing' ? 'growing' : 'budget'}`}>{mlResult.cluster}</span></div>
+                    <div className="result-item"><strong>Average Price:</strong> Rs {mlResult.avgPrice} /sqft</div>
+                    <div className="result-item"><strong>Growth Rate:</strong> {mlResult.growth !== null ? `${mlResult.growth}% (1-year)` : 'Insufficient data for trend'}</div>
+                    <div className="result-item"><strong>Similar Cities:</strong> {mlResult.similar.join(', ')}</div>
+                    {mlResult.note && (<div className="result-item ml-note">{mlResult.note}</div>)}
+                  </div>
+                )}
               </div>
             </div>
           </div>
