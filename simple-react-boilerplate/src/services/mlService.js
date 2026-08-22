@@ -1,4 +1,17 @@
 import cityClusters from "../data/city_clusters.json";
+import districtClusters from "../data/district_clusters.json";
+import postalToCity from "../data/postal_to_city.json";
+
+export const getCityOptions = () =>
+  cityClusters.map((c) => c.city).sort();
+
+export const getPostalCodeOptions = () =>
+  postalToCity
+    .map((p) => ({ code: p.postal_code, city: p.city }))
+    .sort((a, b) => a.code - b.code);
+
+export const getDistrictOptions = () =>
+  districtClusters.map((d) => d.district).sort();
 
 const toTitleCase = (str) =>
   str
@@ -49,6 +62,7 @@ export const analyzeLocation = (location, postalCode) => {
   }
 
   return {
+    level: "city",
     city: match.city,
     postalCode: match.postal_code ?? null,
     cluster: match.cluster,
@@ -56,6 +70,55 @@ export const analyzeLocation = (location, postalCode) => {
     growth: match.yoy_trend_pct !== null ? match.yoy_trend_pct : null,
     similar: match.similar_cities,
     note,
+  };
+};
+
+export const analyzeByPostalCode = (postalCode) => {
+  if (postalCode === null || postalCode === undefined || postalCode === "") {
+    throw new Error("Select a postal code");
+  }
+
+  const entry = postalToCity.find(
+    (p) => parseInt(p.postal_code, 10) === parseInt(postalCode, 10),
+  );
+  if (!entry) {
+    throw new Error(`No data available for postal code ${postalCode}.`);
+  }
+
+  const match = findCityMatch(entry.city);
+  if (!match) {
+    throw new Error(`No cluster data available for "${entry.city}".`);
+  }
+
+  return {
+    level: "city",
+    city: match.city,
+    postalCode: match.postal_code ?? null,
+    cluster: match.cluster,
+    avgPrice: match.avg_price_per_sqft.toLocaleString(),
+    growth: match.yoy_trend_pct !== null ? match.yoy_trend_pct : null,
+    similar: match.similar_cities,
+    note: null,
+  };
+};
+
+export const analyzeByDistrict = (districtName) => {
+  if (!districtName) {
+    throw new Error("Select a district");
+  }
+
+  const match = districtClusters.find((d) => d.district === districtName);
+  if (!match) {
+    throw new Error(`No data available for district "${districtName}".`);
+  }
+
+  return {
+    level: "district",
+    district: match.district,
+    cluster: match.cluster,
+    avgPrice: match.avg_price_per_sqft.toLocaleString(),
+    listingCount: match.listing_count,
+    note: `District-level estimate across ${match.listing_count} listings in ${match.district} District. Pick a specific city or postal code above for a more precise result.`,
   };
 };
 
