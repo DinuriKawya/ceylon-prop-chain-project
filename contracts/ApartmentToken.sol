@@ -460,7 +460,8 @@ contract ApartmentToken {
     event ResaleSold(uint256 indexed listingId, uint256 indexed apartmentId, address seller, address buyer, uint256 amount, uint256 totalPrice);
     event ResaleCancelled(uint256 indexed listingId);
 
-    function listForResale(uint256 _apartmentId, uint256 _amount, uint256 _pricePerToken) public onlyVerifiedUser returns (uint256) {
+    function listForResale(uint256 _apartmentId, uint256 _amount, uint256 _pricePerToken) public onlyVerifiedUser 
+    returns (uint256) {
         require(_apartmentId < apartments.length, "Apartment does not exist");
         require(_amount > 0, "Amount must be greater than 0");
         require(_pricePerToken > 0, "Price must be greater than 0");

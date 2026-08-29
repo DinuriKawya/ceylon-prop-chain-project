@@ -33,7 +33,7 @@ const Navbar = ({ activeTab, setActiveTab }) => {
             <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('about', setActiveTab); }}>About</a>
             <a href="#" onClick={(e) => { e.preventDefault(); setActiveTab('browse'); }}>Properties</a>
             {isAdmin && <a href="#" onClick={(e) => { e.preventDefault(); setActiveTab('transactions'); }}>History</a>}
-            {isVerified && <a href="#" onClick={(e) => { e.preventDefault(); setShowTokenizeForm(true); }}>Tokenize</a>}
+            {isVerified && !isAdmin && <a href="#" onClick={(e) => { e.preventDefault(); setShowTokenizeForm(true); }}>Tokenize</a>}
             {isVerified && <a href="#" onClick={(e) => { e.preventDefault(); setActiveTab('portfolio'); }}>Portfolio</a>}
             {isAdmin && <a href="#" onClick={(e) => { e.preventDefault(); setActiveTab('admin'); }}>Admin {pendingCount + pendingProperties.length > 0 && <span className="nav-badge">{pendingCount + pendingProperties.length}</span>}</a>}
           </div>

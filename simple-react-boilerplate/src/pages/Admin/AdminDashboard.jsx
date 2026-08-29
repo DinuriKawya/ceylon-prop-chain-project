@@ -475,10 +475,9 @@ const AdminDashboard = ({ setActiveTab }) => {
                           />
                           <div style={{ display: 'flex', gap: 10 }}>
                             <button
-                              className="btn btn-sm btn-outline-secondary rounded-pill"
+                              className="cancel"
                               onClick={() => setRejectingPropertyId(null)}
                               disabled={loading}
-                              style={{ flex: 1 }}
                             >
                               Cancel
                             </button>

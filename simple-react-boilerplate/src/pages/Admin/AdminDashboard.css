@@ -368,3 +368,15 @@
 .actions .reject:hover {
   background: #fdf1f0;
 }
+
+.actions .cancel {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1.5px solid var(--border-light);
+}
+
+.actions .cancel:hover {
+  background: var(--bg-primary);
+  color: var(--text-light);
+  border-color: var(--bg-primary);
+}
