@@ -1,0 +1,45 @@
+city_clean,avg_price_per_sqft,listing_count,cluster,cluster_label,yoy_trend_pct,city_for_match,name_for_match,postcode,latitude,longitude
+Angoda,16132.44285365795,4,2,Budget & Rising,,Angoda,,10620.0,6.9367,79.9269
+Athurugiriya,24682.467362786698,232,2,Budget & Rising,-2.8,Athurugiriya,Athurugiriya,10150.0,6.8723185,80.0003875
+Battaramulla,32554.611845263,63,0,Fast Growing,-4.8,Battaramulla,Battaramulla,10120.0,6.8983819,79.9178413
+Boralesgamuwa,28013.12936415453,9,0,Fast Growing,-8.4,Boralesgamuwa,Boralesgamuwa,10290.0,6.823355,79.9090246
+Colombo 10,33377.67209112504,49,0,Fast Growing,7.0,Colombo 10,Colombo 10,1000.0,6.9277038,79.8660836
+Colombo 12,21482.542794895737,5,2,Budget & Rising,,Colombo 12,Colombo 12,1200.0,6.9386362,79.8609174
+Colombo 13,23354.539108748464,3,2,Budget & Rising,,Colombo 13,Colombo 13,1300.0,6.9487664,79.8604831
+Colombo 14,13730.731533458078,3,2,Budget & Rising,,Colombo 14,Colombo 14,1400.0,6.9447602,79.8680208
+Colombo 15,27607.989924055106,27,0,Fast Growing,4.1,Colombo 15,Colombo 15,1500.0,6.9654765,79.8708395
+Colombo 2,62377.56543493465,397,1,Expensive & Stable,5.7,Colombo 2,Colombo 2,200.0,6.9199331,79.8540274
+Colombo 3,51001.24895707789,507,1,Expensive & Stable,-1.7,Colombo 3,Colombo 3,300.0,6.8989344,79.8537672
+Colombo 4,36712.55797996644,209,0,Fast Growing,10.9,Colombo 4,Colombo 4,400.0,6.8961335,79.8571475
+Colombo 5,50494.040180717966,559,1,Expensive & Stable,0.2,Colombo 5,Colombo 5,500.0,6.8887947,79.8663024
+Colombo 6,35194.4651381671,460,0,Fast Growing,8.4,Colombo 6,Colombo 6,600.0,6.8746579,79.8604831
+Colombo 7,60353.34434981411,112,1,Expensive & Stable,-13.3,Colombo 7,Colombo 7,700.0,6.9116652,79.8645678
+Colombo 8,39239.83073056224,143,0,Fast Growing,-0.0,Colombo 8,Colombo 8,800.0,6.9121796,79.8828828
+Colombo 9,25895.21976735801,26,2,Budget & Rising,-9.6,Colombo 9,Colombo 9,900.0,6.9367708,79.8607806
+Dehiwala,29029.65717496652,423,0,Fast Growing,4.8,Dehiwala,Dehiwala,10350.0,6.8301185,79.8800832
+Galle City,26174.469484130743,15,2,Budget & Rising,44.6,Galle,Galle,80000.0,6.0481918,80.2153998
+Gampaha City,20016.919029632696,21,2,Budget & Rising,18.5,Gampaha,Gampaha,11000.0,7.0840484,80.0098314
+Homagama,17231.390818461994,59,2,Budget & Rising,-1.9,Homagama,Homagama,10200.0,6.8432762,80.0031833
+Kadawatha,22184.7442680776,4,2,Budget & Rising,,Kadawatha,Kadawatha,11850.0,7.0046719,79.9542002
+Kandana,44146.84184364539,3,1,Expensive & Stable,,Kandana,Kandana,11320.0,7.0477897,79.8970348
+Kandy City,28203.828828828828,4,0,Fast Growing,,Kandy,Kandy,20000.0,7.2797462,80.6202033
+Kelaniya,23347.176812360496,9,2,Budget & Rising,,Kelaniya,Kelaniya,11600.0,6.9782137,79.9115522
+Kiribathgoda,20356.14329462788,5,2,Budget & Rising,,Kiribathgoda,,11600.0,6.9781,79.9961
+Kolonnawa,18241.21436464322,3,2,Budget & Rising,,Kolonnawa,Kolonnawa,10600.0,6.9280156,79.8908308
+Kottawa,22181.681601658307,75,2,Budget & Rising,3.6,Kottawa,Kottawa,10220.0,6.8411652,79.9654324
+Kotte,35138.7463757733,44,0,Fast Growing,22.6,Kotte,,10100.0,6.917,79.917
+Malabe,27597.847339953307,46,0,Fast Growing,12.4,Malabe,Malabe,10115.0,6.9078483,79.9474087
+Moratuwa,18720.898491030584,43,2,Budget & Rising,17.5,Moratuwa,Moratuwa,10400.0,6.7880706,79.8912813
+Mount Lavinia,25749.03860733771,278,2,Budget & Rising,1.4,Mount Lavinia,Mount Lavinia,10370.0,6.8221588,79.8731774
+Nawala,40037.42032362454,27,0,Fast Growing,-7.4,Nawala,Nawala,10106.0,6.8964191,79.8884819
+Negombo,24539.634348736243,3,2,Budget & Rising,,Negombo,Negombo,11500.0,7.1955474,79.8573384
+Nugegoda,30378.707110568423,108,0,Fast Growing,3.6,Nugegoda,Nugegoda,10250.0,6.8649081,79.8996789
+Nuwara Eliya City,36329.67485711254,8,0,Fast Growing,45.3,Nuwara Eliya,Nuwara Eliya,22200.0,6.9479581,80.7885103
+Pannipitiya,32857.142857142855,5,0,Fast Growing,,Pannipitiya,Pannipitiya,10230.0,6.8463993,79.9484346
+Piliyandala,23315.507127597,10,2,Budget & Rising,,Piliyandala,Piliyandala,10300.0,6.8017575,79.9227313
+Ragama,29535.864978902955,3,0,Fast Growing,,Ragama,Ragama,11010.0,7.0231768,79.9077723
+Rajagiriya,44819.54543117303,544,1,Expensive & Stable,-3.2,Rajagiriya,Rajagiriya,10107.0,6.9094108,79.8942538
+Ratmalana,21681.9385428053,8,2,Budget & Rising,,Ratmalana,Ratmalana,10390.0,6.8187954,79.8710195
+Talawatugoda,26715.47196597465,60,2,Budget & Rising,-12.0,Talawatugoda,Talawatugoda,10116.0,6.8758648,79.9391936
+Veyangoda,7598.343685300207,7,2,Budget & Rising,,Veyangoda,Veyangoda,11100.0,7.1662139,80.0558695
+Wattala,30048.900184420992,33,0,Fast Growing,4.0,Wattala,Wattala,11104.0,6.9906677,79.8931709

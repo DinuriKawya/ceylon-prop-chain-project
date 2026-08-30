@@ -1,0 +1,38 @@
+[
+  {
+    "district": "Colombo",
+    "cluster": "Fast Growing",
+    "avg_price_per_sqft": 40387.24,
+    "listing_count": 4503
+  },
+  {
+    "district": "Galle",
+    "cluster": "Fast Growing",
+    "avg_price_per_sqft": 27723.23,
+    "listing_count": 18
+  },
+  {
+    "district": "Gampaha",
+    "cluster": "Budget & Rising",
+    "avg_price_per_sqft": 23844.98,
+    "listing_count": 90
+  },
+  {
+    "district": "Kalutara",
+    "cluster": "Budget & Rising",
+    "avg_price_per_sqft": 12503.86,
+    "listing_count": 7
+  },
+  {
+    "district": "Kandy",
+    "cluster": "Fast Growing",
+    "avg_price_per_sqft": 28203.83,
+    "listing_count": 4
+  },
+  {
+    "district": "Nuwara Eliya",
+    "cluster": "Fast Growing",
+    "avg_price_per_sqft": 36329.67,
+    "listing_count": 8
+  }
+]

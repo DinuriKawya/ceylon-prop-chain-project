@@ -1,0 +1,45 @@
+city_clean,avg_price_per_sqft,listing_count,cluster,cluster_label,yoy_trend_pct
+Angoda,16132.44285365795,4,2,Budget & Rising,
+Athurugiriya,24682.467362786698,232,2,Budget & Rising,-2.8
+Battaramulla,32554.611845262996,63,0,Fast Growing,-4.8
+Boralesgamuwa,28013.129364154534,9,0,Fast Growing,-8.4
+Colombo 10,33377.67209112504,49,0,Fast Growing,7.0
+Colombo 12,21482.542794895737,5,2,Budget & Rising,
+Colombo 13,23354.539108748464,3,2,Budget & Rising,
+Colombo 14,13730.731533458078,3,2,Budget & Rising,
+Colombo 15,27607.989924055106,27,0,Fast Growing,4.1
+Colombo 2,62377.56543493465,397,1,Expensive & Stable,5.7
+Colombo 3,51001.24895707789,507,1,Expensive & Stable,-1.7
+Colombo 4,36712.55797996644,209,0,Fast Growing,10.9
+Colombo 5,50494.040180717966,559,1,Expensive & Stable,0.2
+Colombo 6,35194.4651381671,460,0,Fast Growing,8.4
+Colombo 7,60353.34434981411,112,1,Expensive & Stable,-13.3
+Colombo 8,39239.83073056224,143,0,Fast Growing,-0.0
+Colombo 9,25895.21976735801,26,2,Budget & Rising,-9.6
+Dehiwala,29029.65717496652,423,0,Fast Growing,4.8
+Galle City,26174.469484130743,15,2,Budget & Rising,44.6
+Gampaha City,20016.919029632696,21,2,Budget & Rising,18.5
+Homagama,17231.390818461994,59,2,Budget & Rising,-1.9
+Kadawatha,22184.7442680776,4,2,Budget & Rising,
+Kandana,44146.84184364539,3,1,Expensive & Stable,
+Kandy City,28203.828828828828,4,0,Fast Growing,
+Kelaniya,23347.176812360496,9,2,Budget & Rising,
+Kiribathgoda,20356.14329462788,5,2,Budget & Rising,
+Kolonnawa,18241.21436464322,3,2,Budget & Rising,
+Kottawa,22181.681601658307,75,2,Budget & Rising,3.6
+Kotte,35138.7463757733,44,0,Fast Growing,22.6
+Malabe,27597.847339953307,46,0,Fast Growing,12.4
+Moratuwa,18720.898491030584,43,2,Budget & Rising,17.5
+Mount Lavinia,25749.03860733771,278,2,Budget & Rising,1.4
+Nawala,40037.42032362454,27,0,Fast Growing,-7.4
+Negombo,24539.634348736243,3,2,Budget & Rising,
+Nugegoda,30378.707110568423,108,0,Fast Growing,3.6
+Nuwara Eliya City,36329.67485711254,8,0,Fast Growing,45.3
+Pannipitiya,32857.142857142855,5,0,Fast Growing,
+Piliyandala,23315.507127596997,10,2,Budget & Rising,
+Ragama,29535.864978902955,3,0,Fast Growing,
+Rajagiriya,44819.54543117303,544,1,Expensive & Stable,-3.2
+Ratmalana,21681.9385428053,8,2,Budget & Rising,
+Talawatugoda,26715.47196597465,60,2,Budget & Rising,-12.0
+Veyangoda,7598.343685300207,7,2,Budget & Rising,
+Wattala,30048.900184420992,33,0,Fast Growing,4.0

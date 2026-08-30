@@ -1,0 +1,354 @@
+[
+  {
+    "city": "Angoda",
+    "lat": 6.9367,
+    "lng": 79.9269,
+    "cluster": "Budget & Rising",
+    "avg_price_per_sqft": 16132.44,
+    "listing_count": 4
+  },
+  {
+    "city": "Athurugiriya",
+    "lat": 6.8723185,
+    "lng": 80.0003875,
+    "cluster": "Budget & Rising",
+    "avg_price_per_sqft": 24682.47,
+    "listing_count": 232
+  },
+  {
+    "city": "Battaramulla",
+    "lat": 6.8983819,
+    "lng": 79.9178413,
+    "cluster": "Fast Growing",
+    "avg_price_per_sqft": 32554.61,
+    "listing_count": 63
+  },
+  {
+    "city": "Boralesgamuwa",
+    "lat": 6.823355,
+    "lng": 79.9090246,
+    "cluster": "Fast Growing",
+    "avg_price_per_sqft": 28013.13,
+    "listing_count": 9
+  },
+  {
+    "city": "Colombo 10",
+    "lat": 6.9277038,
+    "lng": 79.8660836,
+    "cluster": "Fast Growing",
+    "avg_price_per_sqft": 33377.67,
+    "listing_count": 49
+  },
+  {
+    "city": "Colombo 12",
+    "lat": 6.9386362,
+    "lng": 79.8609174,
+    "cluster": "Budget & Rising",
+    "avg_price_per_sqft": 21482.54,
+    "listing_count": 5
+  },
+  {
+    "city": "Colombo 13",
+    "lat": 6.9487664,
+    "lng": 79.8604831,
+    "cluster": "Budget & Rising",
+    "avg_price_per_sqft": 23354.54,
+    "listing_count": 3
+  },
+  {
+    "city": "Colombo 14",
+    "lat": 6.9447602,
+    "lng": 79.8680208,
+    "cluster": "Budget & Rising",
+    "avg_price_per_sqft": 13730.73,
+    "listing_count": 3
+  },
+  {
+    "city": "Colombo 15",
+    "lat": 6.9654765,
+    "lng": 79.8708395,
+    "cluster": "Fast Growing",
+    "avg_price_per_sqft": 27607.99,
+    "listing_count": 27
+  },
+  {
+    "city": "Colombo 2",
+    "lat": 6.9199331,
+    "lng": 79.8540274,
+    "cluster": "Expensive & Stable",
+    "avg_price_per_sqft": 62377.57,
+    "listing_count": 397
+  },
+  {
+    "city": "Colombo 3",
+    "lat": 6.8989344,
+    "lng": 79.8537672,
+    "cluster": "Expensive & Stable",
+    "avg_price_per_sqft": 51001.25,
+    "listing_count": 507
+  },
+  {
+    "city": "Colombo 4",
+    "lat": 6.8961335,
+    "lng": 79.8571475,
+    "cluster": "Fast Growing",
+    "avg_price_per_sqft": 36712.56,
+    "listing_count": 209
+  },
+  {
+    "city": "Colombo 5",
+    "lat": 6.8887947,
+    "lng": 79.8663024,
+    "cluster": "Expensive & Stable",
+    "avg_price_per_sqft": 50494.04,
+    "listing_count": 559
+  },
+  {
+    "city": "Colombo 6",
+    "lat": 6.8746579,
+    "lng": 79.8604831,
+    "cluster": "Fast Growing",
+    "avg_price_per_sqft": 35194.47,
+    "listing_count": 460
+  },
+  {
+    "city": "Colombo 7",
+    "lat": 6.9116652,
+    "lng": 79.8645678,
+    "cluster": "Expensive & Stable",
+    "avg_price_per_sqft": 60353.34,
+    "listing_count": 112
+  },
+  {
+    "city": "Colombo 8",
+    "lat": 6.9121796,
+    "lng": 79.8828828,
+    "cluster": "Fast Growing",
+    "avg_price_per_sqft": 39239.83,
+    "listing_count": 143
+  },
+  {
+    "city": "Colombo 9",
+    "lat": 6.9367708,
+    "lng": 79.8607806,
+    "cluster": "Budget & Rising",
+    "avg_price_per_sqft": 25895.22,
+    "listing_count": 26
+  },
+  {
+    "city": "Dehiwala",
+    "lat": 6.8301185,
+    "lng": 79.8800832,
+    "cluster": "Fast Growing",
+    "avg_price_per_sqft": 29029.66,
+    "listing_count": 423
+  },
+  {
+    "city": "Galle City",
+    "lat": 6.0481918,
+    "lng": 80.2153998,
+    "cluster": "Budget & Rising",
+    "avg_price_per_sqft": 26174.47,
+    "listing_count": 15
+  },
+  {
+    "city": "Gampaha City",
+    "lat": 7.0840484,
+    "lng": 80.0098314,
+    "cluster": "Budget & Rising",
+    "avg_price_per_sqft": 20016.92,
+    "listing_count": 21
+  },
+  {
+    "city": "Homagama",
+    "lat": 6.8432762,
+    "lng": 80.0031833,
+    "cluster": "Budget & Rising",
+    "avg_price_per_sqft": 17231.39,
+    "listing_count": 59
+  },
+  {
+    "city": "Kadawatha",
+    "lat": 7.0046719,
+    "lng": 79.9542002,
+    "cluster": "Budget & Rising",
+    "avg_price_per_sqft": 22184.74,
+    "listing_count": 4
+  },
+  {
+    "city": "Kandana",
+    "lat": 7.0477897,
+    "lng": 79.8970348,
+    "cluster": "Expensive & Stable",
+    "avg_price_per_sqft": 44146.84,
+    "listing_count": 3
+  },
+  {
+    "city": "Kandy City",
+    "lat": 7.2797462,
+    "lng": 80.6202033,
+    "cluster": "Fast Growing",
+    "avg_price_per_sqft": 28203.83,
+    "listing_count": 4
+  },
+  {
+    "city": "Kelaniya",
+    "lat": 6.9782137,
+    "lng": 79.9115522,
+    "cluster": "Budget & Rising",
+    "avg_price_per_sqft": 23347.18,
+    "listing_count": 9
+  },
+  {
+    "city": "Kiribathgoda",
+    "lat": 6.9781,
+    "lng": 79.9961,
+    "cluster": "Budget & Rising",
+    "avg_price_per_sqft": 20356.14,
+    "listing_count": 5
+  },
+  {
+    "city": "Kolonnawa",
+    "lat": 6.9280156,
+    "lng": 79.8908308,
+    "cluster": "Budget & Rising",
+    "avg_price_per_sqft": 18241.21,
+    "listing_count": 3
+  },
+  {
+    "city": "Kottawa",
+    "lat": 6.8411652,
+    "lng": 79.9654324,
+    "cluster": "Budget & Rising",
+    "avg_price_per_sqft": 22181.68,
+    "listing_count": 75
+  },
+  {
+    "city": "Kotte",
+    "lat": 6.917,
+    "lng": 79.917,
+    "cluster": "Fast Growing",
+    "avg_price_per_sqft": 35138.75,
+    "listing_count": 44
+  },
+  {
+    "city": "Malabe",
+    "lat": 6.9078483,
+    "lng": 79.9474087,
+    "cluster": "Fast Growing",
+    "avg_price_per_sqft": 27597.85,
+    "listing_count": 46
+  },
+  {
+    "city": "Moratuwa",
+    "lat": 6.7880706,
+    "lng": 79.8912813,
+    "cluster": "Budget & Rising",
+    "avg_price_per_sqft": 18720.9,
+    "listing_count": 43
+  },
+  {
+    "city": "Mount Lavinia",
+    "lat": 6.8221588,
+    "lng": 79.8731774,
+    "cluster": "Budget & Rising",
+    "avg_price_per_sqft": 25749.04,
+    "listing_count": 278
+  },
+  {
+    "city": "Nawala",
+    "lat": 6.8964191,
+    "lng": 79.8884819,
+    "cluster": "Fast Growing",
+    "avg_price_per_sqft": 40037.42,
+    "listing_count": 27
+  },
+  {
+    "city": "Negombo",
+    "lat": 7.1955474,
+    "lng": 79.8573384,
+    "cluster": "Budget & Rising",
+    "avg_price_per_sqft": 24539.63,
+    "listing_count": 3
+  },
+  {
+    "city": "Nugegoda",
+    "lat": 6.8649081,
+    "lng": 79.8996789,
+    "cluster": "Fast Growing",
+    "avg_price_per_sqft": 30378.71,
+    "listing_count": 108
+  },
+  {
+    "city": "Nuwara Eliya City",
+    "lat": 6.9479581,
+    "lng": 80.7885103,
+    "cluster": "Fast Growing",
+    "avg_price_per_sqft": 36329.67,
+    "listing_count": 8
+  },
+  {
+    "city": "Pannipitiya",
+    "lat": 6.8463993,
+    "lng": 79.9484346,
+    "cluster": "Fast Growing",
+    "avg_price_per_sqft": 32857.14,
+    "listing_count": 5
+  },
+  {
+    "city": "Piliyandala",
+    "lat": 6.8017575,
+    "lng": 79.9227313,
+    "cluster": "Budget & Rising",
+    "avg_price_per_sqft": 23315.51,
+    "listing_count": 10
+  },
+  {
+    "city": "Ragama",
+    "lat": 7.0231768,
+    "lng": 79.9077723,
+    "cluster": "Fast Growing",
+    "avg_price_per_sqft": 29535.86,
+    "listing_count": 3
+  },
+  {
+    "city": "Rajagiriya",
+    "lat": 6.9094108,
+    "lng": 79.8942538,
+    "cluster": "Expensive & Stable",
+    "avg_price_per_sqft": 44819.55,
+    "listing_count": 544
+  },
+  {
+    "city": "Ratmalana",
+    "lat": 6.8187954,
+    "lng": 79.8710195,
+    "cluster": "Budget & Rising",
+    "avg_price_per_sqft": 21681.94,
+    "listing_count": 8
+  },
+  {
+    "city": "Talawatugoda",
+    "lat": 6.8758648,
+    "lng": 79.9391936,
+    "cluster": "Budget & Rising",
+    "avg_price_per_sqft": 26715.47,
+    "listing_count": 60
+  },
+  {
+    "city": "Veyangoda",
+    "lat": 7.1662139,
+    "lng": 80.0558695,
+    "cluster": "Budget & Rising",
+    "avg_price_per_sqft": 7598.34,
+    "listing_count": 7
+  },
+  {
+    "city": "Wattala",
+    "lat": 6.9906677,
+    "lng": 79.8931709,
+    "cluster": "Fast Growing",
+    "avg_price_per_sqft": 30048.9,
+    "listing_count": 33
+  }
+]
