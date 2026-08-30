@@ -3,3 +3,5 @@ build/
 simple-react-boilerplate/node_modules/
 simple-react-boilerplate/build/
 .env
+Location_Cluster/properties.csv
+**/__pycache__/
